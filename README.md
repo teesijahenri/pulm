@@ -1,151 +1,45 @@
-<!DOCTYPE html>
-<html lang="et">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Teesi ja Henri pulmaleht – info pulmapäeva kohta ja ühine Google Photos pulmaalbum." />
-  <title>Teesi & Henri pulm</title>
+# Teesi & Henri GitHub pulmaleht
 
-  <!-- Parisienne font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+See on valmis staatiline pulmaleht GitHub Pages jaoks.
 
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="topbar">
-    <a href="#avaleht" class="nav-logo">T & H</a>
-    <nav>
-      <a href="#info">Info</a>
-      <a href="#paevakava">Päevakava</a>
-      <a href="#pildid">Pildid</a>
-      <a href="#kingitus">Kingitus</a>
-    </nav>
-  </header>
+## Mis on sees
 
-  <main>
-    <section class="hero" id="avaleht">
-      <div class="hero-inner">
-        <img class="couple-logo" src="assets/teesi-henri-logo.png" alt="Teesi ja Henri logo" />
+- Esileht sinu saadetud Teesi & Henri pildiga
+- Parisienne font
+- Pulmainfo
+- Päevakava
+- Google Photos albumi nupp
+- QR-kood, mis viib Google Photos albumisse
+- Mobiilisõbralik kujundus
 
-        <p class="eyebrow">Olete kutsutud meie pulmapäevale</p>
-        <h1>Teesi & Henri</h1>
-        <p class="date-line">22. august 2026 · Viinistu Kunstimuuseum</p>
+## Google Photos album
 
-        <p class="lead">
-          Meil on väga hea meel tähistada seda päeva koos teiega.
-          Siit lehelt leiate kogu olulise info pulmapäeva kohta ning lingi meie ühisesse pulmaalbumisse.
-        </p>
+Albumi link on juba sisse pandud:
 
-        <div class="hero-actions">
-          <a class="button primary" href="#pildid">Lisa pildid albumisse</a>
-          <a class="button secondary" href="#info">Vaata infot</a>
-        </div>
-      </div>
-    </section>
+https://photos.app.goo.gl/Ma2B7o86AwjDaia17
 
-    <section class="section intro-section">
-      <p class="script-title">Kallid külalised</p>
-      <p>
-        Aitäh, et olete osa meie loost. Palume teil pulmapäeval jäädvustada hetki,
-        mida meie ise võib-olla ei märkagi — naeratusi, tantsu, väikeseid vahehetki ja kõike seda,
-        mis teeb selle päeva päriselt meie päevaks.
-      </p>
-    </section>
+QR-kood on juba loodud failina:
 
-    <section class="section cards-section" id="info">
-      <div class="section-heading">
-        <p class="small-label">Pulmapäeva info</p>
-        <h2>Oluline teada</h2>
-      </div>
+assets/google-photos-qr.png
 
-      <div class="info-grid">
-        <article class="info-card">
-          <span class="icon">01</span>
-          <h3>Asukoht</h3>
-          <p>Viinistu Kunstimuuseum<br />Viinistu, Harjumaa</p>
-        </article>
+## Kuidas GitHub Pagesi üles panna
 
-        <article class="info-card">
-          <span class="icon">02</span>
-          <h3>Algus</h3>
-          <p>Kogunemine kell 15:30<br />Tseremoonia kell 16:00</p>
-        </article>
+1. Loo GitHubis uus repository, näiteks `pulmaleht`.
+2. Laadi kõik selle kausta failid repository root-kausta.
+3. Mine repository's:
+   Settings → Pages.
+4. Source: Deploy from a branch.
+5. Branch: main.
+6. Folder: /root.
+7. Save.
 
-        <article class="info-card">
-          <span class="icon">03</span>
-          <h3>Dresscode</h3>
-          <p>Pidulik, suvine ja elegantne. Toonid võivad olla pehmed, mereäärsed ja romantilised.</p>
-        </article>
+Leht tuleb aadressile:
 
-        <article class="info-card">
-          <span class="icon">04</span>
-          <h3>Majutus</h3>
-          <p>Majutus on organiseeritud pruutpaari poolt. Täpsem info edastatakse külalistele eraldi.</p>
-        </article>
-      </div>
-    </section>
+https://SINU-GITHUB-KASUTAJANIMI.github.io/pulmaleht/
 
-    <section class="section timeline-section" id="paevakava">
-      <div class="section-heading">
-        <p class="small-label">Päevakava</p>
-        <h2>Meie pulmapäev</h2>
-      </div>
+## Mida muuta
 
-      <div class="timeline">
-        <div class="timeline-item"><span>15:30</span><p>Kogunemine</p></div>
-        <div class="timeline-item"><span>16:00</span><p>Tseremoonia</p></div>
-        <div class="timeline-item"><span>16:45</span><p>Õnnesoovid ja pildistamine</p></div>
-        <div class="timeline-item"><span>18:00</span><p>Õhtusöök</p></div>
-        <div class="timeline-item"><span>19:30</span><p>Bänd, tants ja trall</p></div>
-        <div class="timeline-item"><span>22:30</span><p>Pulmatort</p></div>
-        <div class="timeline-item"><span>09:00–11:00</span><p>Hommikusöök</p></div>
-        <div class="timeline-item"><span>12:00</span><p>Kojusõit</p></div>
-      </div>
-    </section>
-
-    <section class="section photos-section" id="pildid">
-      <div class="photo-card">
-        <div>
-          <p class="small-label">Pulmaalbum</p>
-          <h2>Jaga meiega oma pilte</h2>
-          <p>
-            Skanni QR-kood või vajuta nupule ja lisa oma fotod ning videod meie ühisesse
-            Google Photos pulmaalbumisse. Kõige armsamad hetked on tihti just külaliste telefonides.
-          </p>
-
-          <a class="button primary" href="https://photos.app.goo.gl/Ma2B7o86AwjDaia17" target="_blank" rel="noopener">
-            Ava Google Photos album
-          </a>
-
-          <p class="note">
-            Kui lisamine ei avane kohe, kontrolli, et oled Google’i kontoga sisse logitud.
-          </p>
-        </div>
-
-        <div class="qr-box">
-          <img src="assets/google-photos-qr.png" alt="QR-kood Google Photos pulmaalbumisse" />
-          <p>Skanni ja lisa pildid</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gift-section" id="kingitus">
-      <div class="section-heading">
-        <p class="small-label">Kingitus</p>
-        <h2>Meie suurim kingitus on teie kohalolu</h2>
-      </div>
-      <p>
-        Kui soovite meid siiski kingitusega rõõmustada, mahub see kõige paremini ümbrikusse.
-        Üllatused ja erisoovid palume koordineerida pulmaisaga.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    <p class="footer-script">Kohtumiseni pulmas</p>
-    <p>Teesi & Henri · 22.08.2026</p>
-  </footer>
-</body>
-</html>
+- Tekstid: `index.html`
+- Värvid ja kujundus: `style.css`
+- Logo/pilt: `assets/teesi-henri-logo.png`
+- QR-kood: `assets/google-photos-qr.png`

@@ -1,45 +1,446 @@
-# Teesi & Henri GitHub pulmaleht
+:root {
+  --blue-bg: #aec2c7;
+  --blue-soft: #c8d8dc;
+  --blue-dark: #5f8492;
+  --blue-ink: #3f6471;
+  --white: #f7fbfb;
+  --cream: #f4efe8;
+  --sand: #d8cfc5;
+  --text: #263a40;
+  --muted: #5f7378;
+  --line: rgba(63, 100, 113, 0.22);
+  --shadow: rgba(38, 58, 64, 0.13);
+}
 
-See on valmis staatiline pulmaleht GitHub Pages jaoks.
+* {
+  box-sizing: border-box;
+}
 
-## Mis on sees
+html {
+  scroll-behavior: smooth;
+}
 
-- Esileht sinu saadetud Teesi & Henri pildiga
-- Parisienne font
-- Pulmainfo
-- Päevakava
-- Google Photos albumi nupp
-- QR-kood, mis viib Google Photos albumisse
-- Mobiilisõbralik kujundus
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(255,255,255,0.5), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(255,255,255,0.32), transparent 26%),
+    linear-gradient(135deg, var(--blue-bg), var(--blue-soft) 52%, #dbe5e7);
+  font-family: "Montserrat", Arial, sans-serif;
+}
 
-## Google Photos album
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(115deg, transparent 0%, rgba(255,255,255,0.14) 48%, transparent 52%),
+    linear-gradient(22deg, transparent 0%, rgba(63,100,113,0.08) 50%, transparent 54%);
+  opacity: 0.75;
+}
 
-Albumi link on juba sisse pandud:
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: min(1120px, calc(100% - 32px));
+  margin: 16px auto 0;
+  padding: 12px 18px;
+  border: 1px solid rgba(255,255,255,0.42);
+  border-radius: 999px;
+  background: rgba(247, 251, 251, 0.56);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 34px var(--shadow);
+}
 
-https://photos.app.goo.gl/Ma2B7o86AwjDaia17
+.nav-logo {
+  font-family: "Parisienne", cursive;
+  font-size: 1.75rem;
+  color: var(--blue-ink);
+  text-decoration: none;
+}
 
-QR-kood on juba loodud failina:
+nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
 
-assets/google-photos-qr.png
+nav a {
+  color: var(--blue-ink);
+  text-decoration: none;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+}
 
-## Kuidas GitHub Pagesi üles panna
+main {
+  position: relative;
+  z-index: 1;
+}
 
-1. Loo GitHubis uus repository, näiteks `pulmaleht`.
-2. Laadi kõik selle kausta failid repository root-kausta.
-3. Mine repository's:
-   Settings → Pages.
-4. Source: Deploy from a branch.
-5. Branch: main.
-6. Folder: /root.
-7. Save.
+.hero {
+  min-height: calc(100vh - 72px);
+  display: grid;
+  place-items: center;
+  padding: 44px 18px 72px;
+}
 
-Leht tuleb aadressile:
+.hero-inner {
+  width: min(920px, 100%);
+  text-align: center;
+  padding: clamp(28px, 6vw, 72px);
+  border: 1px solid rgba(255,255,255,0.42);
+  border-radius: 42px;
+  background:
+    linear-gradient(180deg, rgba(174,194,199,0.78), rgba(200,216,220,0.72)),
+    rgba(247,251,251,0.2);
+  box-shadow: 0 28px 90px rgba(38, 58, 64, 0.18);
+}
 
-https://SINU-GITHUB-KASUTAJANIMI.github.io/pulmaleht/
+.couple-logo {
+  display: block;
+  width: min(380px, 82vw);
+  margin: 0 auto 18px;
+  border-radius: 4px;
+  mix-blend-mode: normal;
+}
 
-## Mida muuta
+.eyebrow,
+.small-label {
+  margin: 0 0 12px;
+  color: var(--blue-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
 
-- Tekstid: `index.html`
-- Värvid ja kujundus: `style.css`
-- Logo/pilt: `assets/teesi-henri-logo.png`
-- QR-kood: `assets/google-photos-qr.png`
+h1 {
+  margin: 0;
+  font-family: "Parisienne", cursive;
+  font-size: clamp(4.2rem, 13vw, 9.2rem);
+  line-height: 0.92;
+  color: var(--white);
+  font-weight: 400;
+  text-shadow: 0 2px 16px rgba(63, 100, 113, 0.24);
+}
+
+.date-line {
+  margin: 22px 0 0;
+  color: var(--blue-ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.25rem, 2.7vw, 1.8rem);
+  font-weight: 500;
+}
+
+.lead {
+  max-width: 680px;
+  margin: 28px auto 0;
+  color: rgba(38, 58, 64, 0.84);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(38, 58, 64, 0.18);
+}
+
+.primary {
+  color: var(--white);
+  background: var(--blue-dark);
+}
+
+.secondary {
+  color: var(--blue-ink);
+  background: rgba(247,251,251,0.52);
+  border: 1px solid rgba(255,255,255,0.56);
+}
+
+.section {
+  width: min(1040px, calc(100% - 32px));
+  margin: 24px auto;
+  padding: clamp(28px, 5vw, 56px);
+  border: 1px solid rgba(255,255,255,0.48);
+  border-radius: 34px;
+  background: rgba(247,251,251,0.54);
+  box-shadow: 0 18px 60px rgba(38, 58, 64, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.intro-section {
+  text-align: center;
+}
+
+.intro-section p:last-child,
+.gift-section p {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.script-title {
+  margin: 0 0 10px;
+  font-family: "Parisienne", cursive;
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--blue-ink);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin: 0;
+  color: var(--blue-ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.3rem, 6vw, 4rem);
+  line-height: 1.05;
+  font-weight: 500;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.info-card {
+  min-height: 230px;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: rgba(255,255,255,0.34);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  color: var(--white);
+  background: var(--blue-dark);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+h3 {
+  margin: 0 0 10px;
+  color: var(--blue-ink);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.94rem;
+}
+
+.timeline {
+  max-width: 760px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-item span {
+  color: var(--blue-ink);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.timeline-item p {
+  margin: 0;
+  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.35rem;
+}
+
+.photos-section {
+  background:
+    linear-gradient(135deg, rgba(95,132,146,0.88), rgba(174,194,199,0.7)),
+    rgba(247,251,251,0.2);
+}
+
+.photo-card {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  align-items: center;
+}
+
+.photo-card h2,
+.photo-card .small-label,
+.photo-card p {
+  color: var(--white);
+}
+
+.photo-card p {
+  line-height: 1.85;
+}
+
+.note {
+  margin-top: 18px;
+  font-size: 0.86rem;
+  opacity: 0.86;
+}
+
+.qr-box {
+  padding: 22px;
+  border-radius: 28px;
+  text-align: center;
+  background: rgba(247,251,251,0.9);
+  box-shadow: 0 16px 42px rgba(38,58,64,0.14);
+}
+
+.qr-box img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.qr-box p {
+  margin: 12px 0 0;
+  color: var(--blue-ink);
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: min(1040px, calc(100% - 32px));
+  margin: 32px auto 48px;
+  color: var(--blue-ink);
+}
+
+.footer-script {
+  margin: 0;
+  font-family: "Parisienne", cursive;
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--white);
+  text-shadow: 0 2px 16px rgba(63, 100, 113, 0.22);
+}
+
+footer p:last-child {
+  margin-top: 4px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 880px) {
+  .topbar {
+    align-items: flex-start;
+    border-radius: 24px;
+  }
+
+  nav {
+    gap: 10px 14px;
+  }
+
+  nav a {
+    font-size: 0.72rem;
+  }
+
+  .info-grid,
+  .photo-card {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    min-height: auto;
+  }
+
+  .qr-box {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar {
+    position: static;
+    display: block;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding-top: 24px;
+  }
+
+  .hero-inner {
+    border-radius: 30px;
+  }
+
+  .couple-logo {
+    width: min(320px, 92vw);
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
